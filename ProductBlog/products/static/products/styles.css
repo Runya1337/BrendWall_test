@@ -1,0 +1,157 @@
+/* static/products/styles.css */
+
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto; /* Центрирование контейнера */
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Центрирование текста внутри контейнера */
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Стили формы */
+form {
+    margin-bottom: 40px;
+    display: inline-block; /* Для центрирования формы */
+    text-align: left; /* Выравнивание текста внутри формы */
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none; /* Запрещаем изменение размера поля "Описание" */
+}
+
+form button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* static/products/styles.css */
+
+/* ... существующие стили ... */
+
+/* Стили таблицы */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    table-layout: fixed; /* Устанавливаем фиксированную раскладку таблицы */
+}
+
+table thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top; /* Выравниваем содержимое по верхнему краю */
+    overflow: hidden; /* Скрываем переполнение */
+    text-overflow: ellipsis; /* Добавляем многоточие для переполненного текста */
+    word-wrap: break-word; /* Перенос слов для длинного текста */
+    word-break: break-word; /* Перенос длинных слов */
+}
+
+/* Задаем ширину столбцов */
+table th:nth-child(1),
+table td:nth-child(1) {
+    width: 50px; /* ID */
+}
+
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 150px; /* Название */
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 300px; /* Описание */
+}
+
+table th:nth-child(4),
+table td:nth-child(4) {
+    width: 100px; /* Цена */
+}
+
+/* ... остальные стили ... */
+
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    table thead {
+        display: none;
+    }
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+    table tr {
+        margin-bottom: 15px;
+    }
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
